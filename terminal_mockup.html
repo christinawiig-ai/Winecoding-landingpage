@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Vibe → Wine Terminal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="terminal" role="region" aria-label="Terminal mock">
+      <div class="toolbar">
+        <span class="dot red" aria-hidden="true"></span>
+        <span class="dot yellow" aria-hidden="true"></span>
+        <span class="dot green" aria-hidden="true"></span>
+      </div>
+      <pre class="output"><span id="typed" aria-live="polite"></span><span class="cursor" aria-hidden="true">█</span></pre>
+    </div>
+  </section>
+  <script src="script.js"></script>
+</body>
+</html>
