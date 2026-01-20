@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" fill="none">
+  <!-- Female Symbol -->
+  <circle cx="30" cy="25" r="12" fill="#FF1493" stroke="#FF1493" stroke-width="3"/>
+  <line x1="30" y1="37" x2="30" y2="52" stroke="#FF1493" stroke-width="3" stroke-linecap="round"/>
+  <line x1="24" y1="46" x2="36" y2="46" stroke="#FF1493" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- FFF Text -->
+  <text x="60" y="45" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#FF1493">FFF</text>
+  
+  <!-- Subtitle -->
+  <text x="60" y="62" font-family="Arial, sans-serif" font-size="11" font-weight="300" fill="#999999" letter-spacing="2">FAMOUS FEMALE FOUNDER</text>
+</svg>
