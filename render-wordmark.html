@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+<style>
+body { margin: 0; background: #000; display: flex; flex-direction: column; align-items: center; padding: 40px; }
+canvas { border: 1px solid #333; }
+a { color: white; margin-top: 20px; font-size: 18px; }
+</style>
+</head>
+<body>
+<canvas id="c" width="640" height="640"></canvas>
+<a id="dl" download="wordmark-square-dark.png">Loading...</a>
+<script>
+document.fonts.ready.then(() => {
+  const canvas = document.getElementById('c');
+  const ctx = canvas.getContext('2d');
+
+  // Dark background
+  ctx.fillStyle = '#19120A';
+  ctx.fillRect(0, 0, 640, 640);
+
+  // Winecoding in SL brand pink #FFE5EA
+  ctx.fillStyle = '#FFE5EA';
+  ctx.font = 'italic 700 106px "Playfair Display"';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('Winecoding', 320, 245);
+
+  // SL symbol centered below, white, scale 1.0 (doubled from 0.5)
+  // viewBox 0 0 130.03 195.18
+  ctx.save();
+  ctx.translate(320, 400);
+  const scale = 0.85;
+  ctx.scale(scale, scale);
+  ctx.translate(-65, -100);
+
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+  ctx.beginPath();
+  // S path
+  ctx.moveTo(65.01, 92.69);
+  ctx.bezierCurveTo(52.14, 92.69, 46.34, 86.25, 46.34, 77.88);
+  ctx.lineTo(46.98, 77.24); ctx.lineTo(54.7, 77.24); ctx.lineTo(55.34, 77.88);
+  ctx.bezierCurveTo(55.34, 82.39, 57.91, 84.96, 65.64, 84.96);
+  ctx.bezierCurveTo(71.43, 84.96, 74.65, 83.03, 74.65, 79.17);
+  ctx.bezierCurveTo(74.65, 74.66, 72.08, 73.38, 63.06, 72.09);
+  ctx.bezierCurveTo(54.05, 70.8, 46.97, 67.58, 46.97, 58.57);
+  ctx.bezierCurveTo(46.97, 52.13, 52.12, 46.34, 64.35, 46.34);
+  ctx.bezierCurveTo(76.58, 46.34, 81.73, 52.13, 81.73, 59.86);
+  ctx.lineTo(81.09, 60.5); ctx.lineTo(73.37, 60.5); ctx.lineTo(72.73, 59.86);
+  ctx.bezierCurveTo(72.73, 56.0, 70.8, 54.07, 63.72, 54.07);
+  ctx.bezierCurveTo(57.93, 54.07, 56.0, 56.0, 56.0, 58.58);
+  ctx.bezierCurveTo(56.0, 62.44, 58.57, 63.73, 67.59, 65.02);
+  ctx.bezierCurveTo(76.6, 66.31, 83.68, 70.17, 83.68, 79.18);
+  ctx.bezierCurveTo(83.68, 86.26, 78.53, 92.69, 65.01, 92.69);
+  ctx.closePath();
+  // L path
+  ctx.moveTo(83.04, 148.84); ctx.lineTo(55.07, 148.84); ctx.lineTo(54.43, 148.2);
+  ctx.lineTo(54.43, 104.43); ctx.lineTo(55.07, 103.79); ctx.lineTo(62.79, 103.79);
+  ctx.lineTo(63.43, 104.43); ctx.lineTo(63.43, 139.39); ctx.lineTo(64.07, 140.03);
+  ctx.lineTo(83.02, 140.03); ctx.lineTo(83.66, 140.67); ctx.lineTo(83.66, 148.19);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+
+  // Auto-download
+  const link = document.createElement('a');
+  link.download = 'wordmark-square-dark.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+
+  const dl = document.getElementById('dl');
+  dl.href = canvas.toDataURL('image/png');
+  dl.textContent = 'Click to download again';
+});
+</script>
+</body>
+</html>
