@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evaluering — Winecoding</title>
-  <meta name="description" content="Evaluering kommer snart.">
+  <meta name="description" content="Evalueringsskjema etter workshop.">
   <meta name="robots" content="noindex, nofollow">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Evaluering — AI-superskills for ledere">
-  <meta property="og:description" content="Fortell oss hva du synes om workshopen 6. mars. Det tar ca. 3 minutter.">
+  <meta property="og:title" content="Evaluering — Winecoding">
+  <meta property="og:description" content="Fortell oss hva du synes. Det tar ca. 3 minutter.">
   <meta property="og:locale" content="nb_NO">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -480,17 +480,217 @@
   <div class="topbar">
     <div class="topbar-left">
       <div class="dot"></div>
-      <span class="topbar-name">AI-superskills for ledere</span>
+      <span class="topbar-name">Winecoding</span>
     </div>
     <span class="topbar-label">Evaluering</span>
   </div>
 
   <main>
 
-    <section>
+    <!-- ========== HERO ========== -->
+    <section id="hero-section">
       <span class="eyebrow">Winecoding</span>
       <h1 class="serif">Evaluering<br><span>kommer snart</span></h1>
       <p class="intro-text">Denne siden er ikke tilgjengelig enn&aring;.</p>
+    </section>
+
+    <!-- ========== SURVEY (hidden until ready — remove style to activate) ========== -->
+    <section style="display: none;" id="survey-section">
+
+      <form id="survey-form" action="https://formspree.io/f/xbdanjon" method="POST">
+
+        <!-- ===== DEL 1: Workshop-evaluering ===== -->
+        <span class="section-label">Del 1 &mdash; Workshopen</span>
+
+        <!-- Q1: Totalvurdering (1-10) -->
+        <div class="form-group">
+          <label class="form-label">Hvor forn&oslash;yd er du med workshopen totalt sett?<span class="form-required">*</span></label>
+          <span class="form-hint">1 = svak, 10 = fantastisk</span>
+          <div class="rating-scale" data-name="totalvurdering">
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="1" required>1</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="2">2</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="3">3</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="4">4</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="5">5</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="6">6</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="7">7</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="8">8</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="9">9</label>
+            <label class="rating-item"><input type="radio" name="totalvurdering" value="10">10</label>
+          </div>
+          <div class="rating-labels">
+            <span>Svak</span>
+            <span>Fantastisk</span>
+          </div>
+        </div>
+
+        <!-- Q2: Mest verdifullt (flervalg) -->
+        <div class="form-group">
+          <label class="form-label">Hva var mest verdifullt for deg?<span class="form-required">*</span></label>
+          <span class="form-hint">Velg alle som passer</span>
+          <div class="option-group">
+            <label class="option-item"><input type="checkbox" name="mest_verdifullt" value="Forstå AI-landskapet bedre"> Forst&aring; AI-landskapet bedre</label>
+            <label class="option-item"><input type="checkbox" name="mest_verdifullt" value="Lært å bruke Claude Code"> L&aelig;rt &aring; bruke Claude Code</label>
+            <label class="option-item"><input type="checkbox" name="mest_verdifullt" value="Konkrete eksempler å ta med tilbake"> Konkrete eksempler jeg kan ta med tilbake</label>
+            <label class="option-item"><input type="checkbox" name="mest_verdifullt" value="Nettverket / møte andre ledere"> Nettverket / m&oslash;te andre ledere</label>
+            <label class="option-item"><input type="checkbox" name="mest_verdifullt" value="Metoden (de 6 prinsippene)"> Metoden (de 6 prinsippene)</label>
+            <label class="option-item"><input type="checkbox" name="mest_verdifullt" value="Installasjon og hands-on erfaring"> Installasjon og hands-on erfaring</label>
+            <label class="option-item" data-has-other="true"><input type="checkbox" name="mest_verdifullt" value="Annet"> Annet
+              <input type="text" class="option-other-text" name="mest_verdifullt_annet" placeholder="Fortell oss gjerne&hellip;">
+            </label>
+          </div>
+        </div>
+
+        <!-- Q3: Hva overrasket deg mest? (fritekst) -->
+        <div class="form-group">
+          <label class="form-label">Hva overrasket deg mest?</label>
+          <span class="form-hint">Valgfritt</span>
+          <textarea class="form-textarea" name="overraskelse" placeholder="Noe du ikke hadde forventet, en aha-opplevelse, noe som endret perspektivet ditt&hellip;"></textarea>
+        </div>
+
+        <!-- Q4: Noe som manglet eller kunne vært bedre? (fritekst) -->
+        <div class="form-group">
+          <label class="form-label">Noe som manglet eller kunne v&aelig;rt bedre?</label>
+          <span class="form-hint">Valgfritt &mdash; &aelig;rlige svar er de mest verdifulle</span>
+          <textarea class="form-textarea" name="forbedring" placeholder="F.eks. for mye/lite tid p&aring; noe, et tema som manglet, noe praktisk&hellip;"></textarea>
+        </div>
+
+        <!-- Q5: NPS (0-10 med fargegradient) -->
+        <div class="form-group">
+          <label class="form-label">Hvor sannsynlig er det at du anbefaler en lignende workshop til en kollega/venn?<span class="form-required">*</span></label>
+          <span class="form-hint">0 = ikke sannsynlig, 10 = helt sikkert</span>
+          <div class="nps-scale" data-name="nps">
+            <label class="nps-item" data-value="0"><input type="radio" name="nps" value="0" required>0</label>
+            <label class="nps-item" data-value="1"><input type="radio" name="nps" value="1">1</label>
+            <label class="nps-item" data-value="2"><input type="radio" name="nps" value="2">2</label>
+            <label class="nps-item" data-value="3"><input type="radio" name="nps" value="3">3</label>
+            <label class="nps-item" data-value="4"><input type="radio" name="nps" value="4">4</label>
+            <label class="nps-item" data-value="5"><input type="radio" name="nps" value="5">5</label>
+            <label class="nps-item" data-value="6"><input type="radio" name="nps" value="6">6</label>
+            <label class="nps-item" data-value="7"><input type="radio" name="nps" value="7">7</label>
+            <label class="nps-item" data-value="8"><input type="radio" name="nps" value="8">8</label>
+            <label class="nps-item" data-value="9"><input type="radio" name="nps" value="9">9</label>
+            <label class="nps-item" data-value="10"><input type="radio" name="nps" value="10">10</label>
+          </div>
+          <div class="nps-labels">
+            <span>Ikke sannsynlig</span>
+            <span>Helt sikkert</span>
+          </div>
+        </div>
+
+        <div class="divider" style="margin: 3rem 0;"></div>
+
+        <!-- ===== DEL 2: Videre bruk + AI exec-innsikt ===== -->
+        <span class="section-label">Del 2 &mdash; Videre bruk og innsikt</span>
+
+        <!-- Q6: Hva kommer du til å bruke AI til? (flervalg) -->
+        <div class="form-group">
+          <label class="form-label">Hva kommer du til &aring; bruke AI til de neste 30 dagene?<span class="form-required">*</span></label>
+          <span class="form-hint">Velg alle som passer</span>
+          <div class="option-group">
+            <label class="option-item"><input type="checkbox" name="ai_bruk_30d" value="Analysere dokumenter/rapporter"> Analysere dokumenter/rapporter</label>
+            <label class="option-item"><input type="checkbox" name="ai_bruk_30d" value="Lage presentasjoner"> Lage presentasjoner</label>
+            <label class="option-item"><input type="checkbox" name="ai_bruk_30d" value="Research og markedsanalyse"> Research og markedsanalyse</label>
+            <label class="option-item"><input type="checkbox" name="ai_bruk_30d" value="Automatisere arbeidsflyt"> Automatisere arbeidsflyt</label>
+            <label class="option-item"><input type="checkbox" name="ai_bruk_30d" value="Bygge prototyper/apper"> Bygge prototyper/apper</label>
+            <label class="option-item"><input type="checkbox" name="ai_bruk_30d" value="Introdusere AI i teamet mitt"> Introdusere AI i teamet mitt</label>
+            <label class="option-item"><input type="checkbox" name="ai_bruk_30d" value="Ingenting ennå"> Ingenting enn&aring;</label>
+            <label class="option-item" data-has-other="true"><input type="checkbox" name="ai_bruk_30d" value="Annet"> Annet
+              <input type="text" class="option-other-text" name="ai_bruk_30d_annet" placeholder="Fortell oss gjerne&hellip;">
+            </label>
+          </div>
+        </div>
+
+        <!-- Q7: Største barrieren (flervalg) -->
+        <div class="form-group">
+          <label class="form-label">Hva er den st&oslash;rste barrieren for &aring; &oslash;ke bruken av AI og vibecoding i din organisasjon?</label>
+          <span class="form-hint">Velg alle som passer</span>
+          <div class="option-group">
+            <label class="option-item"><input type="checkbox" name="barriere" value="IT-policy / compliance"> IT-policy / compliance</label>
+            <label class="option-item"><input type="checkbox" name="barriere" value="Manglende kompetanse i teamet"> Manglende kompetanse i teamet</label>
+            <label class="option-item"><input type="checkbox" name="barriere" value="Usikkerhet om sikkerhet/personvern"> Usikkerhet om sikkerhet/personvern</label>
+            <label class="option-item"><input type="checkbox" name="barriere" value="Ikke prioritert av ledelsen"> Ikke prioritert av ledelsen</label>
+            <label class="option-item"><input type="checkbox" name="barriere" value="Vet ikke hvor jeg/vi skal starte"> Vet ikke hvor jeg/vi skal starte</label>
+            <label class="option-item" data-has-other="true"><input type="checkbox" name="barriere" value="Annet"> Annet
+              <input type="text" class="option-other-text" name="barriere_annet" placeholder="Fortell oss gjerne&hellip;">
+            </label>
+          </div>
+        </div>
+
+        <!-- Q8: AI-forum for ledere (enkeltvalg + fritekst) -->
+        <div class="form-group">
+          <label class="form-label">Kunne du tenke deg &aring; fortsette &aring; l&aelig;re og dele erfaringer i et fast AI-forum for ledere?<span class="form-required">*</span></label>
+          <div class="option-group">
+            <label class="option-item"><input type="checkbox" name="forum_interesse" value="Ja, månedlig halvdag"> Ja, m&aring;nedlig halvdag</label>
+            <label class="option-item"><input type="checkbox" name="forum_interesse" value="Ja, kvartalsvis heldagsworkshop"> Ja, kvartalsvis heldagsworkshop</label>
+            <label class="option-item"><input type="checkbox" name="forum_interesse" value="Ja, online format"> Ja, online format</label>
+            <label class="option-item"><input type="checkbox" name="forum_interesse" value="Nei"> Nei</label>
+            <label class="option-item" data-has-other="true"><input type="checkbox" name="forum_interesse" value="Annet"> Annet
+              <input type="text" class="option-other-text" name="forum_interesse_annet" placeholder="Beskriv gjerne et format som passer for deg&hellip;">
+            </label>
+          </div>
+          <textarea class="form-textarea" name="forum_kommentar" placeholder="Utdyp gjerne &mdash; hva ville gjort det relevant for deg?" style="margin-top: 0.75rem; min-height: 70px;"></textarea>
+        </div>
+
+        <!-- Q9: Hva ville gjort et slikt program verdifullt nok? (flervalg) -->
+        <div class="form-group">
+          <label class="form-label">Hva ville gjort et slikt program verdifullt nok til &aring; betale for?</label>
+          <span class="form-hint">Velg alle som passer</span>
+          <div class="option-group">
+            <label class="option-item"><input type="checkbox" name="verdi_drivere" value="Tilgang til eksperter / rådgivere"> Tilgang til eksperter / r&aring;dgivere</label>
+            <label class="option-item"><input type="checkbox" name="verdi_drivere" value="Hands-on workshops med nye verktøy"> Hands-on workshops med nye verkt&oslash;y</label>
+            <label class="option-item"><input type="checkbox" name="verdi_drivere" value="Case-basert læring fra egen bransje"> Case-basert l&aelig;ring fra egen bransje</label>
+            <label class="option-item"><input type="checkbox" name="verdi_drivere" value="Nettverk med andre ledere"> Nettverk med andre ledere</label>
+            <label class="option-item"><input type="checkbox" name="verdi_drivere" value="1:1 sparring/coaching"> 1:1 sparring/coaching</label>
+            <label class="option-item"><input type="checkbox" name="verdi_drivere" value="Løpende oppdateringer om AI-utvikling"> L&oslash;pende oppdateringer om AI-utvikling</label>
+            <label class="option-item" data-has-other="true"><input type="checkbox" name="verdi_drivere" value="Annet"> Annet
+              <input type="text" class="option-other-text" name="verdi_drivere_annet" placeholder="Fortell oss gjerne&hellip;">
+            </label>
+          </div>
+        </div>
+
+        <!-- Q10: Prisramme (enkeltvalg) -->
+        <div class="form-group">
+          <label class="form-label">Prisramme du ser for deg for et slikt tilbud?</label>
+          <span class="form-hint">Per kvartal</span>
+          <div class="option-group">
+            <label class="option-item"><input type="radio" name="prisramme" value="Under 5 000 kr/kvartal"> Under 5 000 kr/kvartal</label>
+            <label class="option-item"><input type="radio" name="prisramme" value="5 000–15 000 kr/kvartal"> 5 000&ndash;15 000 kr/kvartal</label>
+            <label class="option-item"><input type="radio" name="prisramme" value="15 000–30 000 kr/kvartal"> 15 000&ndash;30 000 kr/kvartal</label>
+            <label class="option-item"><input type="radio" name="prisramme" value="Over 30 000 kr/kvartal"> Over 30 000 kr/kvartal</label>
+            <label class="option-item"><input type="radio" name="prisramme" value="Usikker / bedriften betaler uansett"> Usikker / bedriften betaler uansett</label>
+          </div>
+        </div>
+
+        <div class="divider" style="margin: 3rem 0;"></div>
+
+        <!-- ===== AVSLUTNING ===== -->
+        <span class="section-label">Avslutning</span>
+
+        <!-- Q11: Noe annet? (fritekst) -->
+        <div class="form-group">
+          <label class="form-label">Noe annet du vil si?</label>
+          <span class="form-hint">Valgfritt &mdash; alt er velkommen</span>
+          <textarea class="form-textarea" name="annet" placeholder="Ros, ris, ideer, sp&oslash;rsm&aring;l&hellip;"></textarea>
+        </div>
+
+
+        <!-- Formspree config -->
+        <input type="hidden" name="_cc" value="simon@vibelabs.no">
+        <input type="hidden" name="_subject" value="Winecoding — post-workshop evaluering">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+        <button type="submit" class="submit-btn">Send evaluering &rarr;</button>
+      </form>
+
+      <!-- Success message -->
+      <div class="form-success" id="form-success">
+        <div class="success-check">&#10003;</div>
+        <h3>Takk for tilbakemeldingen!</h3>
+        <p>Vi h&aring;per &aring; se deg igjen, og at du tar med deg AI-superskillsene inn i hverdagen.</p>
+        <p style="margin-top: 1.5rem; color: #555; font-size: 0.95rem;">I mellomtiden, sjekk ut <strong><a href="https://www.winecoding.ai/" target="_blank" rel="noopener">Winecoding</a></strong>, et community for kvinner som bygger, shipper og l&aelig;rer med AI. Meld deg p&aring; gratis office hours og events via <a href="https://luma.com/calendar/manage/cal-qHlWFqSMP9pmaKY/events" target="_blank" rel="noopener">Luma-kalenderen</a>.</p>
+        <p style="margin-top: 0.75rem; color: #555; font-size: 0.95rem;">Bli med i <a href="https://chat.whatsapp.com/LiaLOiMniz65QhLly55Kk0" target="_blank" rel="noopener">WhatsApp-gruppen</a> v&aring;r, der vi deler AI-nyheter, tips og triks, hjelper hverandre n&aring;r man st&aring;r fast, og finner sparringspartnere.</p>
+      </div>
     </section>
 
     <div class="divider"></div>
