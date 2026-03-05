@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-workshop survey — Winecoding</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #FAFAF8;
+      color: #2C2C2C;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .serif { font-family: 'Instrument Serif', Georgia, serif; }
+
+    .topbar {
+      border-bottom: 1px solid #E8E5DF;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 0.75rem; }
+    .dot { width: 1.25rem; height: 1.25rem; border-radius: 9999px; background: #C4522A; flex-shrink: 0; }
+    .topbar-name { font-size: 0.875rem; color: #888; }
+    .topbar-label { font-size: 0.7rem; color: #AAA; letter-spacing: 0.12em; text-transform: uppercase; }
+
+    main { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 2rem; }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C4522A;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      color: #1A1A1A;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+    h1 span { color: #888; }
+
+    .subtitle { color: #888; font-size: 0.95rem; margin-bottom: 2.5rem; }
+
+    h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      color: #1A1A1A;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #D8D5CF 20%, #D8D5CF 80%, transparent);
+      margin: 2.5rem 0;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C4522A;
+      margin-bottom: 1.25rem;
+      padding-top: 0.5rem;
+      display: block;
+    }
+
+    /* Stat cards */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid #E8E5DF;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.5rem;
+      color: #C4522A;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    /* Bar chart */
+    .bar-chart { margin-bottom: 2rem; }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+    .bar-label {
+      flex: 0 0 200px;
+      font-size: 0.85rem;
+      color: #444;
+      text-align: right;
+    }
+    .bar-track {
+      flex: 1;
+      height: 1.75rem;
+      background: #F0EFEB;
+      border-radius: 0.375rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .bar-fill {
+      height: 100%;
+      background: #C4522A;
+      border-radius: 0.375rem;
+      transition: width 0.6s ease;
+      min-width: 2px;
+    }
+    .bar-value {
+      flex: 0 0 2.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #1A1A1A;
+    }
+
+    @media (max-width: 600px) {
+      .bar-label { flex: 0 0 120px; font-size: 0.78rem; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Project cards */
+    .project-list { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .project-card {
+      background: #fff;
+      border: 1px solid #E8E5DF;
+      border-radius: 0.625rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Flag cards */
+    .flag-list { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
+    .flag-card {
+      background: #FFF8F5;
+      border: 1px solid #F0D6CC;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+      color: #8B4513;
+    }
+    .flag-card strong { color: #C4522A; }
+
+    /* Takeaway */
+    .takeaway {
+      background: #fff;
+      border-left: 3px solid #C4522A;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: #444;
+      border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      color: #AAA;
+      font-size: 0.8rem;
+      padding: 2rem 0;
+    }
+    .footer-logo { display: block; margin: 0 auto 0.5rem; height: 18px; opacity: 0.25; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="dot"></div>
+      <span class="topbar-name">Winecoding</span>
+    </div>
+    <span class="topbar-label">Survey-resultater</span>
+  </div>
+
+  <main>
+
+    <span class="eyebrow">Pre-workshop survey</span>
+    <h1 class="serif">11 svar <span>inn</span></h1>
+    <p class="subtitle">Innsamlet 4.&ndash;5. mars 2026</p>
+
+    <!-- ===== OVERVIEW ===== -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">11</div>
+        <div class="stat-label">Deltakere</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Nye med Claude Code</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">7</div>
+        <div class="stat-label">Regelmessige AI-brukere</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Konkrete prosjekter</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== CLAUDE CODE ERFARING ===== -->
+    <span class="section-label">Claude Code-erfaring</span>
+    <h2 class="serif">De fleste er helt ferske</h2>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">Har h&oslash;rt om det</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 45%"></div></div>
+        <span class="bar-value">5</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Brukt noen ganger</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 27%"></div></div>
+        <span class="bar-value">3</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">F&oslash;rste gang</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 18%"></div></div>
+        <span class="bar-value">2</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Bruker regelmessig</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 9%"></div></div>
+        <span class="bar-value">1</span>
+      </div>
+    </div>
+
+    <div class="takeaway">7 av 11 har aldri eller nesten aldri brukt Claude Code. Kun 1 er erfaren bruker.</div>
+
+    <div class="divider"></div>
+
+    <!-- ===== GENERELL AI-KOMFORT ===== -->
+    <span class="section-label">Generelt AI-niv&aring;</span>
+    <h2 class="serif">AI-vante, men nye med koding</h2>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">Regelmessig AI-bruker</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 64%"></div></div>
+        <span class="bar-value">7</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Nybegynner</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 36%"></div></div>
+        <span class="bar-value">4</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== VERKTØY I DAG ===== -->
+    <span class="section-label">Verkt&oslash;y de bruker i dag</span>
+    <h2 class="serif">ChatGPT dominerer</h2>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">ChatGPT</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 82%"></div></div>
+        <span class="bar-value">9</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Microsoft Copilot</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 45%"></div></div>
+        <span class="bar-value">5</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Claude (chat)</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 45%"></div></div>
+        <span class="bar-value">5</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Vibecoding</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 9%"></div></div>
+        <span class="bar-value">1</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== MÅL ===== -->
+    <span class="section-label">Hva de vil l&aelig;re</span>
+    <h2 class="serif">Agenter og Claude Code p&aring; topp</h2>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">Forst&aring; AI-agenter</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 91%"></div></div>
+        <span class="bar-value">10</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">L&aelig;re Claude Code</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 91%"></div></div>
+        <span class="bar-value">10</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Konkrete eksempler</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 73%"></div></div>
+        <span class="bar-value">8</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Bygge noe konkret</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 45%"></div></div>
+        <span class="bar-value">5</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Forst&aring; AI for bransjen</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 36%"></div></div>
+        <span class="bar-value">4</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Lede AI-initiativer</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 36%"></div></div>
+        <span class="bar-value">4</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Nettverk</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 27%"></div></div>
+        <span class="bar-value">3</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== PROSJEKTER ===== -->
+    <span class="section-label">Konkrete prosjekter</span>
+    <h2 class="serif">Hva de vil bygge</h2>
+
+    <div class="project-list">
+      <div class="project-card">
+        <strong>Google Analytics + Ad spend-tracking</strong><br>
+        Har 5 domener (.com/.no/.se). Vil se topptall for total trafikk fra prioriterte land uavhengig av toppdomene. I tillegg stort forbruk i Google og Microsoft Ads som i dag trackes helmanuelt.
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">Regelmessig AI-bruker &middot; Windows &middot; Claude Code installert</div>
+      </div>
+      <div class="project-card">
+        <strong>CRM og medlemsanalyse</strong><br>
+        Jobber sentralt i en medlemsbedrift som mangler gode CRM-systemer og automatiserte l&oslash;sninger for medlemsanalyse og -pleie.
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">F&oslash;rste gang med Claude Code &middot; Windows &middot; Fikser abo f&oslash;r workshop</div>
+      </div>
+      <div class="project-card">
+        <strong>Effektivisere daglige oppgaver</strong><br>
+        Finne eller bygge verkt&oslash;y for &aring; effektivisere eksisterende oppgaver, eventuelt finne l&oslash;sning for ting de ikke gj&oslash;r i dag.
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">Nybegynner &middot; Mac &middot; Claude Code installert</div>
+      </div>
+      <div class="project-card">
+        <strong>Excel-automatisering + personlig l&oslash;pecoach</strong><br>
+        Automatisere bearbeidelse av store Excel-filer fra ett format til et annet. Ogs&aring;: Claude som l&oslash;pecoach for halvmaraton basert p&aring; egne treningsdata.
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">Nybegynner &middot; Windows &middot; Mangler installasjon</div>
+      </div>
+      <div class="project-card">
+        <strong>Koble mail, kalender og Spond</strong><br>
+        Vil ha bedre oversikt over alt som skjer p&aring; tvers av e-post, kalender og Spond-arrangementer.
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">Regelmessig bruker av b&aring;de AI og Claude Code &middot; Vibecoding-erfaring</div>
+      </div>
+      <div class="project-card">
+        <strong>Internt regnskap/budsjett-dashboard</strong><br>
+        Bygge dashboard som tar h&oslash;yde for innebygd organisasjonskunnskap og gir bedre regnskapsrapportering, styrerapporter etc. Ogs&aring;: forst&aring; hva mer av arbeidet som kan forenkles.
+        <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #888;">Regelmessig AI-bruker &middot; Mac &middot; Mangler Claude Code-installasjon</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== TEKNISK READINESS ===== -->
+    <span class="section-label">Teknisk readiness</span>
+    <h2 class="serif">De fleste er klare</h2>
+
+    <div class="bar-chart">
+      <div class="bar-row">
+        <span class="bar-label">Claude Pro/Max-abo</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 82%"></div></div>
+        <span class="bar-value">9</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Administratortilgang</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 82%"></div></div>
+        <span class="bar-value">9</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Claude Code installert</span>
+        <div class="bar-track"><div class="bar-fill" style="width: 64%"></div></div>
+        <span class="bar-value">7</span>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Windows</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Mac</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ===== FLAGS ===== -->
+    <span class="section-label">Heads up</span>
+
+    <div class="flag-list">
+      <div class="flag-card"><strong>2 mangler Claude-abo</strong> &mdash; kan fikses p&aring; stedet</div>
+      <div class="flag-card"><strong>4 har ikke installert Claude Code</strong> &mdash; sett av tid til installasjon i starten</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <footer>
+      <img src="wordmark-dark.png" alt="Winecoding" class="footer-logo" style="height: 22px;">
+      Pre-workshop survey &middot; AI-superskills for ledere &middot; 6. mars 2026
+    </footer>
+
+  </main>
+
+</body>
+</html>

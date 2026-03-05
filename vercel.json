@@ -2,6 +2,7 @@
   "buildCommand": "",
   "outputDirectory": ".",
   "rewrites": [
-    { "source": "/evaluering", "destination": "/evaluering.html" }
+    { "source": "/evaluering", "destination": "/evaluering.html" },
+    { "source": "/resultater", "destination": "/survey-resultater.html" }
   ]
 }
