@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Winecoding Office Hours #8 — Slide 1 Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sl-red: #FF3333;
+    --wc-pink: #FBE9E7;
+    --wc-brown: #3D2817;
+    --body-dark: #2A2A2A;
+    --body-gray: #4A4A4A;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f0f0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  h1 { font-size: 14px; color: #666; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+
+  .slide {
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    background: white;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  }
+
+  /* Outer SL red frame */
+  .sl-frame {
+    position: absolute;
+    inset: 0;
+    background: var(--sl-red);
+    padding: 22px;
+  }
+  .sl-inner {
+    background: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* Left column */
+  .left {
+    width: 42%;
+    background: var(--wc-pink);
+    padding: 60px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    color: var(--wc-brown);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+  .section { margin-top: 28px; }
+  .label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sl-red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .time {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--body-dark);
+    margin-bottom: 24px;
+  }
+  .agenda {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+  .agenda li {
+    font-size: 16px;
+    color: var(--body-dark);
+    line-height: 1.6;
+  }
+  .laptop-note {
+    font-size: 13px;
+    color: var(--body-gray);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .signup {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .signup-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--body-dark);
+  }
+  .qr {
+    width: 110px;
+    height: 110px;
+    background: white;
+    padding: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .qr img { width: 100%; height: 100%; display: block; }
+
+  /* Right column — photo grid with Frame 1 Pink */
+  .right {
+    width: 58%;
+    position: relative;
+    background: white;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .frame-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .frame-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('sl-frame-1-pink.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .grid {
+    position: absolute;
+    inset: 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+  .photo {
+    background: #ddd;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #888;
+    border-radius: 2px;
+  }
+  .slot-1 { background-image: url('slot-1.jpg'); background-color: #C4A0A0; }
+  .slot-2 { background-image: url('slot-2.jpg'); background-color: #B0A090; }
+  .slot-4 { background-image: url('slot-4.jpg'); background-color: #A09088; }
+
+  .placeholder {
+    background: #E8E8E8;
+    border: 2px dashed var(--sl-red);
+    color: var(--body-gray);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .caption {
+    font-size: 12px;
+    color: #888;
+    max-width: 1280px;
+    text-align: left;
+  }
+  .caption strong { color: #444; }
+</style>
+</head>
+<body>
+  <h1>Winecoding Office Hours #8 — Slide 1 preview (1280×720)</h1>
+
+  <div class="slide">
+    <div class="sl-frame">
+      <div class="sl-inner">
+        <div class="left">
+          <div>
+            <div class="wordmark">Winecoding</div>
+
+            <div class="section">
+              <div class="label">Office Hours #8</div>
+              <div class="time">Thursday · 14:00–16:00</div>
+
+              <div class="label">This week</div>
+              <ul class="agenda">
+                <li>What's new in Claude Code</li>
+                <li>Lightning talks · 3 × 6 min</li>
+                <li>Office hours · two zones</li>
+              </ul>
+
+              <div class="laptop-note">
+                Bring your laptop with<br>
+                Claude Code installed
+              </div>
+            </div>
+          </div>
+
+          <div class="signup">
+            <div class="signup-label">Sign up:</div>
+            <div class="qr"><img src="qr-office-hours-8.png" alt="QR"></div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="frame-wrap">
+            <div class="frame-bg"></div>
+            <div class="grid">
+              <div class="photo slot-1"></div>
+              <div class="photo slot-2"></div>
+              <div class="photo placeholder">Nytt bilde<br>fra forrige OH</div>
+              <div class="photo slot-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="caption">
+    <strong>Obs:</strong> Bilde-slots 1, 2 og 4 vises som farget bakgrunn her (jeg har ikke de originale fotoene). I Google Slides beholder du dine eksisterende tre bilder. Slot #3 er placeholder med stiplet rød ramme — bytt ut med nytt foto fra forrige office hours før presentasjon.
+  </div>
+</body>
+</html>

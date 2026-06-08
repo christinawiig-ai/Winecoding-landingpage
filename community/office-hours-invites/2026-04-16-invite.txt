@@ -1,0 +1,21 @@
+Winecoding Office Hours, Thursday 14:00-16:00
+
+This week we're mixing it up: Whats new + lightning talks + hands-on office hours.
+
+Agenda
+  • 14:00 Welcome + quick round
+  • 14:10 What's new in Claude Code: latest launches and what they mean in practice
+  • 14:25 Lightning talks use cases (3 × 6 min)
+  • 14:45 Coffee + mingle
+  • 14:55 Office hours, with two optional zones: "getting started" for new builders,
+  "builder table" for those shipping something
+
+Want to do a lightning talk? Reply here. One slot left, 6 minutes, casual. Show something you've built with Claude Code or similar.
+
+Bring a laptop with Claude Code already installed. No intro to basics or context engineering this time. If you need install help, come after the talks and we'll get you set up.
+
+RSVP: https://luma.com/nbweyt18
+
+---
+Delt: Slack #general (Startuplab) + Winecoding WhatsApp-gruppe, 2026-04-13
+Event: torsdag 2026-04-16, 14:00-16:00
